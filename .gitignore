@@ -1,13 +1,5 @@
 *.env
 .DS_Store
-__pycache__
-
-settings.env
-
-.idea
-
-wg_keys
-wg_configs
 
 log/*.log
 log/*.log.*
@@ -16,8 +8,3 @@ log
 logs
 media
 static
-vpenv
-node_modules
-
-dump.rdb
-db.sqlite
