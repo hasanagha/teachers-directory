@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+	Import Teachers
+{% endblock page_title %}
+
+{% block content %}
+<form method="post" enctype='multipart/form-data'>
+	{% csrf_token %}
+    <div class="form-group">
+        <label for="file" class="text-muted">
+            Upload CSV file to import
+        </label><br />
+        {{ form.file }}
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+
+{% endblock %}

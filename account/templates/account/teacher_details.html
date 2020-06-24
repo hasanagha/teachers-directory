@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+	{{ object }}
+{% endblock page_title %}
+
+{% block content %}
+
+<div class="row">
+	<div class="col-sm-4">
+		<img src="{{ object.get_profile_image }}" width=100 />
+	</div>
+	<div class="col-sm-8">
+		<table class="table">
+			<tr>
+				<td>First Name</td>
+				<td>{{ object.first_name }}</td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td>{{ object.last_name }}</td>
+			</tr>
+			<tr>
+				<td>Email Address</td>
+				<td><a href="mailto:{{ object.email }}"></a>{{ object.email }}</a></td>
+			</tr>
+			<tr>
+				<td>Phone</td>
+				<td>{{ object.phone }}</td>
+			</tr>
+			<tr>
+				<td>Subjects</td>
+				<td>
+					<ul class="p-0 m-0 pl-3">
+						{% for subject in object.get_subjects %}
+							<li>{{ subject }}</li>
+						{% endfor %}
+					</ul>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+{% endblock %}
